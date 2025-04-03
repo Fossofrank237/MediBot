@@ -1,0 +1,9 @@
+{
+    "users": [
+      { "id": 1, "name": "Jean Dupont", "email": "jean.dupont@email.com" }
+    ],
+    "messages": [],
+    "advice": [
+      { "id": 1, "title": "Hydratation", "content": "Buvez au moins 1.5L d'eau par jour." }
+    ]
+  }
