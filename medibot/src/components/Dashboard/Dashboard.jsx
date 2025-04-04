@@ -1,5 +1,5 @@
 import React from 'react';
-import DashboardCard from './DashboardCard';
+import DashboardCard from '../../Dashboard/DashboardCard';
 import './Dashboard.css';
 
 const Dashboard = () => {
