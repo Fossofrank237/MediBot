@@ -1,22 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import DashboardPage from './pages/DashboardPage';
-import ChatbotPage from './pages/ChatbotPage';
-import HistoryPage from './pages/HistoryPage';
-import AdvicePage from './pages/AdvicePage';
-import ProfilePage from './pages/ProfilePage';
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
+import Dashboard from "./components/Dashboard";
 
-function AppRoutes() {
+export default function AppRoutes() {
+  const isLoggedIn = !!localStorage.getItem("user");
+
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/chatbot" element={<ChatbotPage />} />
-        <Route path="/historique" element={<HistoryPage />} />
-        <Route path="/conseils" element={<AdvicePage />} />
-        <Route path="/profil" element={<ProfilePage />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
-
-export default AppRoutes;
