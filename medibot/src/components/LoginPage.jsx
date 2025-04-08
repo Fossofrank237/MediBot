@@ -16,6 +16,7 @@ const LoginPage = () => {
   
       if (users.length > 0) {
         localStorage.setItem("user", JSON.stringify(users[0]));
+        console.log("Redirection vers /dashboard");
         navigate("/dashboard");
       } else {
         alert("Email ou mot de passe incorrect");

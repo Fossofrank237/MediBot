@@ -1,0 +1,87 @@
+/* Container général */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  /* Barre latérale */
+  .sidebar {
+    width: 240px;
+    background-color: #0d6efd;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .sidebar-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-menu li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .sidebar-menu li:hover {
+    background-color: #0b5ed7;
+  }
+  
+  /* Contenu principal */
+  .dashboard-main {
+    flex: 1;
+    padding: 40px;
+  }
+  
+  .dashboard-main h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-main p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  /* Cartes d'information */
+  .dashboard-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: white;
+    padding: 30px;
+    flex: 1 1 200px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  

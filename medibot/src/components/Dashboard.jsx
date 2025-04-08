@@ -1,5 +1,8 @@
+// Nouveau Dashboard stylisé pour MediBot
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FaRobot, FaUserCircle, FaSignOutAlt, FaHeartbeat, FaCommentDots } from "react-icons/fa";
+import "./Dashboard.css";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -11,33 +14,29 @@ const Dashboard = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h2>Bienvenue {user?.email} sur MediBot !</h2>
-      <p>Vous êtes connecté à votre espace personnel.</p>
-      <button onClick={handleLogout} style={styles.button}>Déconnexion</button>
+    <div className="dashboard-container">
+      <aside className="sidebar">
+        <div className="sidebar-header">
+          <FaRobot size={32} /> MediBot
+        </div>
+        <ul className="sidebar-menu">
+          <li onClick={() => navigate("/profile")}><FaUserCircle /> Profil</li>
+          <li onClick={() => navigate("/tips")}><FaHeartbeat /> Conseils Santé</li>
+          <li onClick={() => navigate("/chatbot")}><FaCommentDots /> Chatbot</li>
+          <li onClick={handleLogout}><FaSignOutAlt /> Déconnexion</li>
+        </ul>
+      </aside>
+      <main className="dashboard-main">
+        <h1>Bienvenue {user?.name || user?.email} 👋</h1>
+        <p>Voici votre tableau de bord personnel sur MediBot.</p>
+        <div className="dashboard-cards">
+          <div className="card">📊 Statistiques santé</div>
+          <div className="card">💡 Recommandations IA</div>
+          <div className="card">🧠 Historique de conversation</div>
+        </div>
+      </main>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    margin: "60px auto",
-    maxWidth: "600px",
-    padding: "40px",
-    background: "#f4f4f4",
-    textAlign: "center",
-    borderRadius: "12px",
-    boxShadow: "0 0 10px rgba(0,0,0,0.1)"
-  },
-  button: {
-    marginTop: "20px",
-    padding: "10px 20px",
-    backgroundColor: "#007bff",
-    color: "#fff",
-    border: "none",
-    borderRadius: "8px",
-    cursor: "pointer"
-  }
 };
 
 export default Dashboard;
